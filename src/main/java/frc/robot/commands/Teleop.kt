@@ -1,4 +1,9 @@
 package frc.robot.commands
 
-class Teleop {
+import edu.wpi.first.wpilibj.command.Command
+
+class Teleop: Command() {
+    override fun isFinished(): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }
