@@ -1,6 +1,7 @@
 package frc.robot
 
 import edu.wpi.first.wpilibj.Joystick
+import edu.wpi.first.wpilibj.buttons.JoystickButton
 import kotlin.math.abs
 
 object OI {
@@ -33,9 +34,6 @@ object OI {
     val bigStick
         get() = manipulatorController.getRawAxis(1)
 
-    val flipflap
-        get() = manipulatorController.getRawAxis(2)
-
     val hat
         get() = if(manipulatorController.pov == 0) 1.0 else if (manipulatorController.pov == 180) -1.0 else 0.0
 
@@ -54,6 +52,6 @@ object OI {
     val shooterManual
         get() = manipulatorController.getRawButton(5)
 
-    val startFireSequence
-        get() = manipulatorController.getRawButton(6)
+    val FireSequenceButton
+        get() = JoystickButton(manipulatorController, 6)//manipulatorController.getRawButton(6)
 }

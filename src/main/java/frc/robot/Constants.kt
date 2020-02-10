@@ -21,7 +21,7 @@ object Constants {
     const val shooterMaxVel = 1000.0
     const val shooterMaxAcc = 100.0
 
-    const val intakeSpeed = 0.5
+    const val ballSystemOverallSpeed = 0.5
 
     const val conveyorForwardTicks = 100
 
@@ -30,4 +30,8 @@ object Constants {
     const val shooterDistToSpeed = 10.0
 
     const val drivetrainAlignmentPTerm = 0.001
+    const val drivetrainAlignmentTolerance = 1
+
+    const val shooterSpeedPTerm = 0.001
+    const val shooterSpeedTolerance = 100.0
 }

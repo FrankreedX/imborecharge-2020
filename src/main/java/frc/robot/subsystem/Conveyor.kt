@@ -1,12 +1,14 @@
 package frc.robot.subsystem
 
 import com.ctre.phoenix.motorcontrol.ControlMode
+import edu.wpi.first.wpilibj.DigitalInput
 import frc.robot.Constants
 import frc.robot.Robotmap
 import frc.robot.engine.TalonWrapper
 
 object Conveyor {
     private val conveyorTalon = TalonWrapper(Robotmap.conveyorTalon)
+    private val conveyorLimSwitch = DigitalInput(2).get()
 
     private const val forwardTicks = Constants.conveyorForwardTicks
     private var setPoint = 0
@@ -31,6 +33,10 @@ object Conveyor {
 
     fun getOutput(): Double{
         return conveyorTalon.outputCurrent
+    }
+
+    fun getLimSwitch(): Boolean{
+        return conveyorLimSwitch
     }
 
     fun stop(){

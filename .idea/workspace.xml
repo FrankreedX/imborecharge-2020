@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8802163-f77b-427b-8810-f21562998a86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/frc/robot/commands/FireSequence.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Vision.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Constants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/OI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/OI.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/commands/Teleop.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Climb.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Climb.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Shooter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Shooter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendordeps/REVRobotics.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendordeps/REVRobotics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/commands/FireSequence.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/commands/FireSequence.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Conveyor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Conveyor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Intake.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Intake.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Roller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Roller.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
       </list>
     </option>
@@ -77,9 +74,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="560" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1581112961009" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581295972495">
+    <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581350863374">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581295972495" />
+    <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1581350863374" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581350094249">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581350094249" />
   </component>
 </project>
