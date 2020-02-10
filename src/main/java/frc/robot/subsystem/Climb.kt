@@ -1,8 +1,8 @@
 package frc.robot.subsystem
 
 import com.revrobotics.*
-import frc.robot.Constants
 import frc.robot.Robotmap
+import kotlin.math.abs
 
 object Climb {
     private val climbSpark = CANSparkMax(Robotmap.winchSpark, CANSparkMaxLowLevel.MotorType.kBrushless)
@@ -12,6 +12,6 @@ object Climb {
     }
 
     fun runClimb(setPoint: Double){
-        climbSpark.set(setPoint)
+        climbSpark.set(abs(setPoint))
     }
 }

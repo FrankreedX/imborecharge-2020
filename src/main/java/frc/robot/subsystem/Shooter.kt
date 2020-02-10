@@ -31,7 +31,7 @@ object Shooter {
     }
 
     fun runShooter(setPoint: Double){
-        if (setPoint == -1.0) shooterPid.setReference(shooterIdleSpeed, ControlType.kVelocity)
+        if (setPoint < 0.0) shooterPid.setReference(shooterIdleSpeed, ControlType.kVelocity)
         shooterPid.setReference(setPoint* Constants.neoMaxRPM, ControlType.kVelocity)
     }
 
