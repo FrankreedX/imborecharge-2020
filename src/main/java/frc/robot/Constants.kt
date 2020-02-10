@@ -24,4 +24,10 @@ object Constants {
     const val intakeSpeed = 0.5
 
     const val conveyorForwardTicks = 100
+
+    const val shooterIdleSpeed = 1000.0 //shooter speed when vision target not visible, this is like spinning up your machine gun in tf2 without firing
+
+    const val shooterDistToSpeed = 10.0
+
+    const val drivetrainAlignmentPTerm = 0.001
 }

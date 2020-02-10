@@ -41,4 +41,19 @@ object OI {
 
     val conveyorAuto
         get() = manipulatorController.getRawButton(1)
+
+    val enableShooter
+        get() = manipulatorController.getRawButton(2)
+
+    val disableShooter
+        get() = manipulatorController.getRawButton(3)
+
+    val shooterAuto
+        get() = manipulatorController.getRawButton(4)
+
+    val shooterManual
+        get() = manipulatorController.getRawButton(5)
+
+    val startFireSequence
+        get() = manipulatorController.getRawButton(6)
 }

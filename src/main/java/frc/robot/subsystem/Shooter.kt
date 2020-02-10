@@ -7,6 +7,8 @@ import frc.robot.Robotmap
 object Shooter {
     private val shooterSpark = CANSparkMax(Robotmap.shooterSpark, CANSparkMaxLowLevel.MotorType.kBrushless)
     private val shooterPid = CANPIDController(shooterSpark)
+    private val shooterEncoder = CANEncoder(shooterSpark)
+    private const val shooterIdleSpeed = Constants.shooterIdleSpeed
 
     private const val kP = Constants.shooterKP
     private const val kI = Constants.shooterKI
@@ -19,6 +21,7 @@ object Shooter {
 
     init {
         shooterSpark.restoreFactoryDefaults()
+        shooterSpark.idleMode = CANSparkMax.IdleMode.kCoast
 
         shooterPid.p = kP
         shooterPid.i = kI
@@ -28,10 +31,15 @@ object Shooter {
     }
 
     fun runShooter(setPoint: Double){
+        if (setPoint == -1.0) shooterPid.setReference(shooterIdleSpeed, ControlType.kVelocity)
         shooterPid.setReference(setPoint* Constants.neoMaxRPM, ControlType.kVelocity)
     }
 
     fun stop(){
-        shooterPid.setReference(0.0,ControlType.kVelocity)
+        shooterPid.setReference(0.0,ControlType.kVoltage)
+    }
+
+    fun getSpeed(): Double{
+        return shooterEncoder.velocity
     }
 }

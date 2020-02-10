@@ -22,7 +22,11 @@ class Robot: TimedRobot() {
     override fun teleopPeriodic() {
         //drivetrain
         Drivetrain.drive(
-                CheesyDrive.updateCheesy(if (OI.quickTurn) OI.leftTrigger-OI.rightTrigger else OI.turn, OI.throttle, OI.quickTurn)
+                CheesyDrive.updateCheesy(
+                        if (OI.quickTurn) OI.leftTrigger-OI.rightTrigger else OI.turn,
+                        OI.throttle,
+                        OI.quickTurn
+                )
         )
 
         //intake
@@ -44,11 +48,8 @@ class Robot: TimedRobot() {
         //roller
         if (!rollerLimSwitch||Conveyor.getOutput()<0) Roller.rollerFollow() else Roller.stop()
 
-        //shooter
-        if (shooterEnabled)
-            if (shooterAuto)
-                Shooter.runShooter(vision)
-            else Shooter.runShooter(OI.bigStick)
+        //fire sequence automation
+        if (OI.startFireSequence)
 
         //climb
     }
