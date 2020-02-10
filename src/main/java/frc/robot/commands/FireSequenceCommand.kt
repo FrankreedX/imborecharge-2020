@@ -22,6 +22,7 @@ class FireSequenceCommand: Command() {
         if (shooterReady && drivetrainReady || !Roller.getLimSwitch()){
             Conveyor.conveyorManual(Constants.ballSystemOverallSpeed)
             Intake.intakeRun(Constants.ballSystemOverallSpeed)
+            Roller.rollerFollow()
         }
     }
 

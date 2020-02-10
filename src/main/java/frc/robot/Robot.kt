@@ -19,7 +19,16 @@ class Robot: TimedRobot() {
 
     private val fireSequence = FireSequenceCommand()
 
+    override fun autonomousInit() {
+        fireSequence.start()
+    }
+
+    override fun autonomousPeriodic() {
+        Scheduler.getInstance().run()
+    }
+
     override fun teleopInit() {
+        fireSequence.cancel()
     }
 
     override fun teleopPeriodic() {
