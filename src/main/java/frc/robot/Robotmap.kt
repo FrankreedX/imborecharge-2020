@@ -14,5 +14,5 @@ object Robotmap {
 
     const val shooterSpark = 1
 
-    const val winchSpark = 2
+    const val winchSpark = 8
 }

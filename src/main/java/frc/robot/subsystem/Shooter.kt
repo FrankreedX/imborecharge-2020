@@ -16,8 +16,6 @@ object Shooter {
     private const val kFF = Constants.shooterKFF
     private const val kMaxOutput = Constants.shooterKMaxOutput
     private const val kMinOutput = Constants.shooterKMinOutput
-    private const val maxVel = Constants.shooterMaxVel
-    private const val maxAcc = Constants.shooterMaxAcc
 
     init {
         shooterSpark.restoreFactoryDefaults()
@@ -31,12 +29,8 @@ object Shooter {
     }
 
     fun runShooter(setPoint: Double){
-        if (setPoint < 0.0) shooterPid.setReference(shooterIdleSpeed, ControlType.kVelocity)
-        shooterPid.setReference(setPoint* Constants.neoMaxRPM, ControlType.kVelocity)
-    }
-
-    fun stop(){
-        shooterPid.setReference(0.0,ControlType.kVoltage)
+        if (setPoint < 0.0) shooterPid.setReference(shooterIdleSpeed, ControlType.kSmartVelocity)
+        shooterPid.setReference(setPoint* Constants.neoMaxRPM, ControlType.kSmartVelocity)
     }
 
     fun getSpeed(): Double{

@@ -38,8 +38,4 @@ object Conveyor {
     fun getLimSwitch(): Boolean{
         return conveyorLimSwitch
     }
-
-    fun stop(){
-        conveyorTalon.set(0.0)
-    }
 }
