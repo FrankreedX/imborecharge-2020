@@ -12,6 +12,6 @@ object Climb {
     }
 
     fun runClimb(setPoint: Double){
-        climbSpark.set(abs(setPoint))
+        climbSpark.setVoltage(abs(setPoint)*12.0)
     }
 }

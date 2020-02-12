@@ -2,6 +2,7 @@ package frc.robot
 
 import edu.wpi.first.wpilibj.TimedRobot
 import edu.wpi.first.wpilibj.command.Scheduler
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
 import frc.robot.commands.FireSequenceCommand
 import frc.robot.engine.CheesyDrive
 import frc.robot.subsystem.*
@@ -20,11 +21,12 @@ class Robot: TimedRobot() {
     private val fireSequence = FireSequenceCommand()
 
     override fun autonomousInit() {
-        fireSequence.start()
+//        fireSequence.start()
     }
 
     override fun autonomousPeriodic() {
-        Scheduler.getInstance().run()
+//        Scheduler.getInstance().run()
+        Climb.runClimb(.5)
     }
 
     override fun teleopInit() {
@@ -32,6 +34,13 @@ class Robot: TimedRobot() {
     }
 
     override fun teleopPeriodic() {
+        SmartDashboard.putBoolean("Shooting",shooting)
+        SmartDashboard.putBoolean("Climbing", climb)
+        SmartDashboard.putBoolean("Conveyor Auto", conveyorAuto)
+        SmartDashboard.putBoolean("Shooter Auto", shooterAuto)
+
+        SmartDashboard.putBoolean("Intake Lim", Intake.getLimSwitch())
+
         //if robot starts driving by controller, stop fire sequence
         if (OI.driving) {
             shooting = false
@@ -58,8 +67,10 @@ class Robot: TimedRobot() {
                         OI.quickTurn
                 )
         )
+
         if (!climb) {
             if (!shooting) {
+                println("Driving")
                 fireSequence.cancel()
                 //intake
                 Intake.intakeRun(OI.bigStick)
@@ -80,6 +91,7 @@ class Robot: TimedRobot() {
                 if (!rollerLimSwitch || Conveyor.getOutput() < 0) Roller.rollerFollow() else Roller.stop()
 
             } else {
+                println("Shooting")
                 //fire sequence automation
                 if (shooterAuto) fireSequence.start()
                 else {
@@ -93,6 +105,7 @@ class Robot: TimedRobot() {
         } else {
             //climb
             Climb.runClimb(OI.bigStick)
+            println("Climbing")
         }
 
 

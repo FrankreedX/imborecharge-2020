@@ -32,23 +32,26 @@ object OI {
     private val manipulatorController = Joystick(1)
 
     val bigStick
-        get() = manipulatorController.getRawAxis(1)
+        get() = deadZone(manipulatorController.getRawAxis(1))
 
     val flipflap: Boolean
-        get() = manipulatorController.getRawAxis(2) < 0.0
+        get() = manipulatorController.getRawAxis(3) < 0.0
 
     val hat
         get() = if(manipulatorController.pov == 0) 1.0 else if (manipulatorController.pov == 180) -1.0 else 0.0
 
     val conveyorAuto
-        get() = manipulatorController.getRawButton(1)
-
-    val shooterAuto
         get() = manipulatorController.getRawButton(4)
 
+    val shooterAuto
+        get() = manipulatorController.getRawButton(9)
+
     val shooterManual
-        get() = manipulatorController.getRawButton(5)
+        get() = manipulatorController.getRawButton(10)
 
     val FireSequenceButton
-        get() = manipulatorController.getRawButtonPressed(6)//manipulatorController.getRawButton(6)
+        get() = manipulatorController.getRawButtonPressed(11)
+
+    val randomButton
+        get() = manipulatorController.getRawButtonPressed(12)
 }
