@@ -95,7 +95,7 @@ class Robot: TimedRobot() {
                         true
                     } else false
                     if (OI.conveyorForward) Conveyor.conveyorTargetUpdate() //have not been tested
-                    if (OI.conveyorForward) Conveyor.conveyorTargetBackward() //have not been tested
+                    if (OI.conveyorBackward) Conveyor.conveyorTargetBackward() //have not been tested
                     Conveyor.updateConveyor()
                 } else Conveyor.conveyorManual(OI.hat)
 
