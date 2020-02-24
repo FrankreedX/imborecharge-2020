@@ -23,7 +23,7 @@ class Robot: TimedRobot() {
     private var lastCurrent = 0.0
     private var currentCurrent = 0.0
 
-    val powerDistributionPanel = PowerDistributionPanel()
+    private val powerDistributionPanel = PowerDistributionPanel()
 
     private val fireSequence = FireSequenceCommand()
 
