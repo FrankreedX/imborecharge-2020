@@ -50,5 +50,11 @@ object OI {
         get() = manipulatorController.getRawButton(5)
 
     val FireSequenceButton
-        get() = manipulatorController.getRawButtonPressed(6)//manipulatorController.getRawButton(6)
+        get() = manipulatorController.getRawButton(6)
+
+    val conveyorForward
+        get() = manipulatorController.getRawButtonReleased(7)
+
+    val conveyorBackward
+        get() = manipulatorController.getRawButtonReleased(8)
 }

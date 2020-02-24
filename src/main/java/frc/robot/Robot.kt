@@ -37,7 +37,7 @@ class Robot: TimedRobot() {
             shooting = false
         } else if (OI.FireSequenceButton)
             //toggle button to start shooting
-            shooting = !shooting
+            shooting = true
 
         if (OI.shooterManual) {
             shooterAuto = false
@@ -73,6 +73,8 @@ class Robot: TimedRobot() {
                         Conveyor.conveyorTargetUpdate()
                         true
                     } else false
+                    if (OI.conveyorForward) Conveyor.conveyorTargetUpdate() //have not been tested
+                    if (OI.conveyorForward) Conveyor.conveyorTargetBackward() //have not been tested
                     Conveyor.updateConveyor()
                 } else Conveyor.conveyorManual(OI.hat)
 
@@ -88,11 +90,12 @@ class Robot: TimedRobot() {
                     Shooter.runShooter(OI.bigStick)
                     Conveyor.conveyorManual(OI.hat)
                     Roller.rollerFollow()
+                    Intake.follow()
                 }
             }
         } else {
             //climb
-            Climb.runClimb(OI.bigStick)
+            Climb.lower(OI.bigStick)
         }
 
 

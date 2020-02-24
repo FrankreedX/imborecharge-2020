@@ -23,6 +23,10 @@ object Conveyor {
         setPoint += forwardTicks
     }
 
+    fun conveyorTargetBackward(){
+        setPoint -= forwardTicks
+    }
+
     fun updateConveyor(){
         conveyorTalon.set(ControlMode.Position, setPoint.toDouble())
     }
@@ -32,7 +36,7 @@ object Conveyor {
     }
 
     fun getOutput(): Double{
-        return conveyorTalon.outputCurrent
+        return conveyorTalon.motorOutputVoltage
     }
 
     fun getLimSwitch(): Boolean{
