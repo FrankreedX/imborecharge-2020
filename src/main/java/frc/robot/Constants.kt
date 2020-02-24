@@ -16,12 +16,13 @@ object Constants {
 
     const val shooterIdleSpeed = 1000.0 //shooter speed when vision target not visible, this is like spinning up your machine gun in tf2 without firing
 
-    const val drivetrainAlignmentPTerm = 0.001
-    const val drivetrainAlignmentTolerance = 1
+//    const val drivetrainAlignmentPTerm = 0.001
+//    const val drivetrainAlignmentTolerance = 1
 
-    const val shooterSpeedPTerm = 0.001
+//    const val shooterSpeedPTerm = 0.001
     const val shooterSpeedTolerance = 100.0
-
+    const val shooterIdealSpeed = 1000.0
+    
     const val climbPDPSlot = 3
 
     const val climbCurrentDifferrence = 10

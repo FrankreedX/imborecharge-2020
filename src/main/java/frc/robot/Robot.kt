@@ -37,6 +37,7 @@ class Robot: TimedRobot() {
 
     override fun teleopInit() {
         fireSequence.cancel()
+        Conveyor.resetSetpoint()
     }
 
     override fun teleopPeriodic() {
@@ -89,13 +90,15 @@ class Robot: TimedRobot() {
                     conveyorAuto = true
                     Conveyor.resetSetpoint()
                 }
-                if (conveyorAuto && (!rollerLimSwitch || !conveyorLimSwitch)) {
-                    intakeLimPressed = if (intakeLimSwitch) {
-                        if (!intakeLimPressed) Conveyor.conveyorTargetUpdate()
-                        true
-                    } else false
-                    if (OI.conveyorForward) Conveyor.conveyorTargetUpdate() //have not been tested
-                    if (OI.conveyorBackward) Conveyor.conveyorTargetBackward() //have not been tested
+                if (conveyorAuto) {
+                    if (!rollerLimSwitch || !conveyorLimSwitch) {
+                        intakeLimPressed = if (intakeLimSwitch) {
+                            if (!intakeLimPressed) Conveyor.conveyorTargetUpdate()
+                            true
+                        } else false
+                        if (OI.conveyorForward) Conveyor.conveyorTargetUpdate() //have not been tested
+                    }
+                    if (OI.conveyorBackward) Conveyor.conveyorTargetBackward()
                     Conveyor.updateConveyor()
                 } else Conveyor.conveyorManual(OI.hat)
 
@@ -117,7 +120,6 @@ class Robot: TimedRobot() {
             }
         } else {
             //climb
-            powerDistributionPanel.getCurrent(Constants.climbPDPSlot)
             if (currentCurrent-lastCurrent > Constants.climbCurrentDifferrence) climbTop = true
             if (!climbTop)
                 Climb.raise(OI.bigStick)

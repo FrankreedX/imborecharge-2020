@@ -2,9 +2,9 @@ package frc.robot.commands
 
 import edu.wpi.first.wpilibj.command.Command
 import frc.robot.Constants
-import frc.robot.engine.DriveSignal
+//import frc.robot.engine.DriveSignal
 import frc.robot.subsystem.*
-import kotlin.math.abs
+//import kotlin.math.abs
 
 class FireSequenceCommand: Command() {
     private var drivetrainReady = false
@@ -15,15 +15,15 @@ class FireSequenceCommand: Command() {
     }
 
     override fun execute() {
-        val shooterSpeed = Vision.visionTargetDistance * Constants.shooterSpeedPTerm
-            Shooter.runShooter(Vision.visionTargetDistance)
+        val shooterSpeed = Constants.shooterIdealSpeed//Vision.visionTargetDistance * Constants.shooterSpeedPTerm
+            Shooter.runShooter(shooterSpeed)
             shooterReady = Shooter.getSpeed()> shooterSpeed - Constants.shooterSpeedTolerance && Shooter.getSpeed() < shooterSpeed + Constants.shooterSpeedTolerance
 
-        val turnValue = Vision.visionTargetAngleDisplacement * Constants.drivetrainAlignmentPTerm
-        Drivetrain.drive(DriveSignal(turnValue, -turnValue))
-        drivetrainReady = abs(Vision.visionTargetAngleDisplacement) < Constants.drivetrainAlignmentTolerance
+//        val turnValue = Vision.visionTargetAngleDisplacement * Constants.drivetrainAlignmentPTerm
+//        Drivetrain.drive(DriveSignal(turnValue, -turnValue))
+//        drivetrainReady = abs(Vision.visionTargetAngleDisplacement) < Constants.drivetrainAlignmentTolerance
 
-        if (shooterReady && drivetrainReady || !Roller.getLimSwitch()){
+        if (shooterReady /*&& drivetrainReady*/ || !Roller.getLimSwitch()){
             Conveyor.conveyorManual(Constants.ballSystemOverallSpeed)
             Intake.intakeRun(Constants.ballSystemOverallSpeed)
             Roller.rollerFollow()
@@ -31,7 +31,7 @@ class FireSequenceCommand: Command() {
     }
 
     override fun end() {
-        drivetrainReady = false
+//        drivetrainReady = false
         shooterReady = false
     }
 
