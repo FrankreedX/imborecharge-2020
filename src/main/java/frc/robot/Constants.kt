@@ -25,4 +25,8 @@ object Constants {
     const val climbPDPSlot = 3
 
     const val climbCurrentDifferrence = 10
+
+    const val intakeLimSwitchID = 1
+    const val conveyorLimSwitchID = 2
+    const val rollerLimSwitchID = 3
 }

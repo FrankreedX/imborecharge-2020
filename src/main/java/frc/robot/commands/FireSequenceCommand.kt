@@ -10,6 +10,10 @@ class FireSequenceCommand: Command() {
     private var drivetrainReady = false
     private var shooterReady = false
 
+    override fun start() {
+
+    }
+
     override fun execute() {
         val shooterSpeed = Vision.visionTargetDistance * Constants.shooterSpeedPTerm
             Shooter.runShooter(Vision.visionTargetDistance)

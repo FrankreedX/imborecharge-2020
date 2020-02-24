@@ -85,10 +85,13 @@ class Robot: TimedRobot() {
                 //conveyor
                 //another possible solution: place lim switch so that when ball passes through
                 if (OI.hat != 0.0) conveyorAuto = false
-                if (OI.conveyorAuto) conveyorAuto = true
+                if (OI.conveyorAuto) {
+                    conveyorAuto = true
+                    Conveyor.resetSetpoint()
+                }
                 if (conveyorAuto && (!rollerLimSwitch || !conveyorLimSwitch)) {
                     intakeLimPressed = if (intakeLimSwitch) {
-                        Conveyor.conveyorTargetUpdate()
+                        if (!intakeLimPressed) Conveyor.conveyorTargetUpdate()
                         true
                     } else false
                     if (OI.conveyorForward) Conveyor.conveyorTargetUpdate() //have not been tested

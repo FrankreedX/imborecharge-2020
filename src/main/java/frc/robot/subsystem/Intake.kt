@@ -3,11 +3,12 @@ package frc.robot.subsystem
 import com.ctre.phoenix.motorcontrol.ControlMode
 import com.ctre.phoenix.motorcontrol.can.VictorSPX
 import edu.wpi.first.wpilibj.DigitalInput
+import frc.robot.Constants
 import frc.robot.Robotmap
 
 object Intake {
     private val intakeVictor = VictorSPX(Robotmap.intakeVictor)
-    private val intakeSwitchSensor = DigitalInput(9)
+    private val intakeSwitchSensor = DigitalInput(Constants.intakeLimSwitchID)
 
     fun intakeRun(a: Double){
         intakeVictor.set(ControlMode.PercentOutput, a)
