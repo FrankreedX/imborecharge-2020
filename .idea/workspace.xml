@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8802163-f77b-427b-8810-f21562998a86" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/OI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/OI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Constants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Climb.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Climb.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Conveyor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Conveyor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Intake.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Intake.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +98,19 @@
       <option name="presentableId" value="Default" />
       <updated>1581112815101</updated>
     </task>
+    <task id="LOCAL-00001" summary="intake now follow conveyor when shooting, conveyor can now move forward and backward ball width on command (can still move ball width with limit switch), [wip] climb would move up when joystick is forward and stop when it's upright, then have to pull joystick back">
+      <created>1582509858488</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582509858488</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="intake now follow conveyor when shooting, conveyor can now move forward and backward ball width on command (can still move ball width with limit switch), [wip] climb would move up when joystick is forward and stop when it's upright, then have to pull joystick back" />
+    <option name="LAST_COMMIT_MESSAGE" value="intake now follow conveyor when shooting, conveyor can now move forward and backward ball width on command (can still move ball width with limit switch), [wip] climb would move up when joystick is forward and stop when it's upright, then have to pull joystick back" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581383272943">
@@ -120,6 +129,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1581350863374" />
+    <state x="604" y="114" key="CommitChangelistDialog2" timestamp="1582509858080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="604" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582509858080" />
     <state x="184" y="85" key="DiffContextDialog" timestamp="1582509745578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -140,18 +153,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581385136276" />
+    <state x="184" y="85" key="MergeDialog" timestamp="1582510125427">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582510125427" />
+    <state x="672" y="235" key="MultipleFileMergeDialog" timestamp="1582510125440">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="235" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582510125440" />
     <state x="0" y="97" key="SettingsEditor" timestamp="1582500871267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582500871267" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1582510134956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582510134956" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1582508080593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582508080593" />
-    <state x="646" y="311" key="git4idea.merge.GitPullDialog" timestamp="1582509614185">
+    <state x="646" y="311" key="git4idea.merge.GitPullDialog" timestamp="1582509864634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="646" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582509614185" />
+    <state x="646" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582509864634" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581365759942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

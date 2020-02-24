@@ -1,5 +1,6 @@
 package frc.robot
 
+import edu.wpi.first.wpilibj.PowerDistributionPanel
 import edu.wpi.first.wpilibj.TimedRobot
 import edu.wpi.first.wpilibj.command.Scheduler
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
@@ -8,15 +9,21 @@ import frc.robot.engine.CheesyDrive
 import frc.robot.subsystem.*
 
 class Robot: TimedRobot() {
-    var conveyorAuto = true
-    var shooterAuto = true
-    var shooting = false
-    var climb = false
+    private var conveyorAuto = true
+    private var shooterAuto = true
+    private var shooting = false
+    private var climb = false
+    private var climbTop = false
 
     private val intakeLimSwitch = Intake.getLimSwitch()
     private val conveyorLimSwitch = Conveyor.getLimSwitch()
     private val rollerLimSwitch = Roller.getLimSwitch()
     private var intakeLimPressed = false
+
+    private var lastCurrent = 0.0
+    private var currentCurrent = 0.0
+
+    val powerDistributionPanel = PowerDistributionPanel()
 
     private val fireSequence = FireSequenceCommand()
 
@@ -33,6 +40,8 @@ class Robot: TimedRobot() {
     }
 
     override fun teleopPeriodic() {
+        currentCurrent = powerDistributionPanel.getCurrent(Constants.climbPDPSlot)
+
         SmartDashboard.putBoolean("Shooting",shooting)
         SmartDashboard.putBoolean("Climbing", climb)
         SmartDashboard.putBoolean("Conveyor Auto", conveyorAuto)
@@ -105,11 +114,17 @@ class Robot: TimedRobot() {
             }
         } else {
             //climb
-            Climb.lower(OI.bigStick)
+            powerDistributionPanel.getCurrent(Constants.climbPDPSlot)
+            if (currentCurrent-lastCurrent > Constants.climbCurrentDifferrence) climbTop = true
+            if (!climbTop)
+                Climb.raise(OI.bigStick)
+            else
+                Climb.lower(OI.bigStick)
         }
 
 
         Scheduler.getInstance().run()
+        lastCurrent = currentCurrent
     }
 
     override fun disabledPeriodic() {

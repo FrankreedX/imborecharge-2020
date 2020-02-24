@@ -21,4 +21,8 @@ object Constants {
 
     const val shooterSpeedPTerm = 0.001
     const val shooterSpeedTolerance = 100.0
+
+    const val climbPDPSlot = 3
+
+    const val climbCurrentDifferrence = 10
 }
