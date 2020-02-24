@@ -1,23 +1,24 @@
 package frc.robot.subsystem
 
 import com.ctre.phoenix.motorcontrol.ControlMode
+import com.ctre.phoenix.motorcontrol.can.VictorSPX
 import edu.wpi.first.wpilibj.DigitalInput
 import frc.robot.Robotmap
 import frc.robot.engine.TalonWrapper
 
 object Roller {
-    private val rollerTalon = TalonWrapper(Robotmap.rollerTalon)
-    private val rollerLimSwitch = DigitalInput(3).get()
+    private val rollerVictor = VictorSPX(Robotmap.rollerVictor)
+    private val rollerLimSwitch = DigitalInput(3)
 
     fun rollerFollow(){
-        rollerTalon.set(ControlMode.Follower, Robotmap.conveyorTalon.toDouble())
+        rollerVictor.set(ControlMode.Follower, Robotmap.conveyorTalon.toDouble())
     }
 
     fun stop(){
-        rollerTalon.set(0.0)
+        rollerVictor.set(ControlMode.PercentOutput, 0.0)
     }
 
     fun getLimSwitch(): Boolean{
-        return rollerLimSwitch
+        return rollerLimSwitch.get()
     }
 }

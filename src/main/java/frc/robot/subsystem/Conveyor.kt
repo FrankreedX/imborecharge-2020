@@ -8,7 +8,7 @@ import frc.robot.engine.TalonWrapper
 
 object Conveyor {
     private val conveyorTalon = TalonWrapper(Robotmap.conveyorTalon)
-    private val conveyorLimSwitch = DigitalInput(2).get()
+    private val conveyorLimSwitch = DigitalInput(2)
 
     private const val forwardTicks = Constants.conveyorForwardTicks
     private var setPoint = 0
@@ -40,6 +40,6 @@ object Conveyor {
     }
 
     fun getLimSwitch(): Boolean{
-        return conveyorLimSwitch
+        return conveyorLimSwitch.get()
     }
 }
