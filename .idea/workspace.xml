@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c8802163-f77b-427b-8810-f21562998a86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Constants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/commands/FireSequenceCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/commands/FireSequenceCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Conveyor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Conveyor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Roller.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystem/Roller.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1582512495514</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="removed vision">
+      <created>1582514232360</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1582514232360</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cleanup">
+      <created>1582514324659</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582514324659</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,7 +148,9 @@
     <MESSAGE value="current thingie for climb done" />
     <MESSAGE value="setpoint improved" />
     <MESSAGE value="conveyor backward button" />
-    <option name="LAST_COMMIT_MESSAGE" value="conveyor backward button" />
+    <MESSAGE value="removed vision" />
+    <MESSAGE value="cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581383272943">
@@ -153,10 +169,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1581350863374" />
-    <state x="0" y="114" key="CommitChangelistDialog2" timestamp="1582514231953">
+    <state x="0" y="114" key="CommitChangelistDialog2" timestamp="1582514324019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582514231953" />
+    <state x="0" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582514324019" />
     <state x="184" y="85" key="DiffContextDialog" timestamp="1582509745578">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,21 +205,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582500871267" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1582512500073">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1582514328765">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582512500073" />
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1582508080593">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582514328765" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1582607348318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582508080593" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582607348318" />
     <state x="646" y="311" key="git4idea.merge.GitPullDialog" timestamp="1582509864634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="646" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582509864634" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1581365759942">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1582607621154">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1581365759942" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582607621154" />
   </component>
 </project>

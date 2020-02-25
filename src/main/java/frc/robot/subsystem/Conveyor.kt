@@ -19,7 +19,7 @@ object Conveyor {
         conveyorTalon.setPID(0.01,0.0,0.0)
     }
 
-    fun conveyorTargetUpdate(){
+    fun conveyorTargetForward(){
         setPoint += forwardTicks
     }
 
@@ -33,10 +33,6 @@ object Conveyor {
 
     fun conveyorManual(a: Double){
         conveyorTalon.set(a)
-    }
-
-    fun getOutput(): Double{
-        return conveyorTalon.motorOutputVoltage
     }
 
     fun getLimSwitch(): Boolean{

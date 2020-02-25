@@ -11,6 +11,10 @@ object Roller {
     private val rollerVictor = VictorSPX(Robotmap.rollerVictor)
     private val rollerLimSwitch = DigitalInput(Constants.rollerLimSwitchID)
 
+    init {
+        rollerVictor.follow(TalonWrapper(Robotmap.conveyorTalon))
+    }
+
     fun rollerFollow(){
         rollerVictor.set(ControlMode.Follower, Robotmap.conveyorTalon.toDouble())
     }

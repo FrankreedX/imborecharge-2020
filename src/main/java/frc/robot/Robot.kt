@@ -93,17 +93,17 @@ class Robot: TimedRobot() {
                 if (conveyorAuto) {
                     if (!rollerLimSwitch || !conveyorLimSwitch) {
                         intakeLimPressed = if (intakeLimSwitch) {
-                            if (!intakeLimPressed) Conveyor.conveyorTargetUpdate()
+                            if (!intakeLimPressed) Conveyor.conveyorTargetForward()
                             true
                         } else false
-                        if (OI.conveyorForward) Conveyor.conveyorTargetUpdate() //have not been tested
+                        if (OI.conveyorForward) Conveyor.conveyorTargetForward() //have not been tested
                     }
                     if (OI.conveyorBackward) Conveyor.conveyorTargetBackward()
                     Conveyor.updateConveyor()
                 } else Conveyor.conveyorManual(OI.hat)
 
                 //roller will not run if it's forced to run forward when limit switch is pressed, otherwise follow conveyor at all times. No Manual
-                if (!rollerLimSwitch || Conveyor.getOutput() < 0) Roller.rollerFollow() else Roller.stop()
+                if (rollerLimSwitch && !OI.conveyorBackward) Roller.stop()
 
             } else {
                 println("Shooting")
@@ -114,7 +114,6 @@ class Robot: TimedRobot() {
                     //shooter may have Jacob's system of dividing the input range into different set speeds instead of continuous range
                     Shooter.runShooter(OI.bigStick)
                     Conveyor.conveyorManual(OI.hat)
-                    Roller.rollerFollow()
                     Intake.follow()
                 }
             }
